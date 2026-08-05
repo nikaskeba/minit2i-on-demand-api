@@ -12,3 +12,5 @@ lora
 mini_t2i
 notebooks
 tools
+cloudflared
+docker-compose.cloudflare.yml

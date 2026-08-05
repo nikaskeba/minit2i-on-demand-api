@@ -4,3 +4,5 @@ __pycache__/
 *.py[cod]
 test-headers.txt
 test-output*.png
+cloudflared/
+docker-compose.cloudflare.yml
