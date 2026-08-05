@@ -1,0 +1,25 @@
+services:
+  minit2i-api:
+    build:
+      context: .
+    container_name: minit2i-api
+    restart: unless-stopped
+    ports:
+      - "8092:8092"
+    gpus: all
+    shm_size: "2gb"
+    environment:
+      MINIT2I_MODEL_ID: MiniT2I/MiniT2I
+      MINIT2I_DEVICE: cuda
+      MINIT2I_GENERATION_TIMEOUT: 1800
+      # Set a secret to require `Authorization: Bearer ...` or `X-API-Key: ...`.
+      MINIT2I_API_KEY: ${MINIT2I_API_KEY:-}
+      HF_HOME: /cache/huggingface
+    volumes:
+      - ./cache:/cache/huggingface
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8092/health', timeout=5)"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s

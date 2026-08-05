@@ -1,0 +1,6 @@
+.env
+cache/
+__pycache__/
+*.py[cod]
+test-headers.txt
+test-output*.png

@@ -1,0 +1,14 @@
+.git
+.gitignore
+cache
+__pycache__
+*.py[cod]
+*.png
+*.jpg
+*.jpeg
+assets
+configs
+lora
+mini_t2i
+notebooks
+tools
