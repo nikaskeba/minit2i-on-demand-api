@@ -36,7 +36,7 @@ This image uses PyTorch 2.11.0 with CUDA 12.8. It was validated on an NVIDIA GeF
 Clone the repository and start the service:
 
 ```bash
-git clone <YOUR_REPOSITORY_URL>
+git clone https://github.com/nikaskeba/minit2i-on-demand-api.git
 cd minit2i-api
 docker compose up -d --build
 ```
